@@ -12,7 +12,7 @@ namespace sqlconsoleconnection
     {
        
         static string connectionString =
-            "server=ENCOPDBANLT1776\\MSSQLSERVER1;database=myencora;Integrated Security=True";
+            "yourDB_CONNECTION_STRING";
         static SqlConnection conn = new SqlConnection(connectionString);
 
         static void Main(string[] args)
