@@ -22,6 +22,8 @@ out/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+**/packages/
+
 
 # Rider
 .idea/
