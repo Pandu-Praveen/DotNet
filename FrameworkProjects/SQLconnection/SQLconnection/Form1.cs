@@ -19,7 +19,7 @@ namespace SQLconnection
         }
 
         static string connectionUrl =
-            "server=ENCOPDBANLT1776\\MSSQLSERVER1;database=myencora;";
+            "yourDB_CONNECTION_STRING";
         static SqlConnection conn = new SqlConnection(connectionUrl);
 
         private void getLastEmpId_Click(object sender, EventArgs e)
