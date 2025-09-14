@@ -23,7 +23,7 @@ namespace Sqldemo
         {
             try
             {
-                 string connectionUrl = "server=ENCOPDBANLT1776\\MSSQLSERVER1;database=myencora;Integrated Security=True";
+                 string connectionUrl = "yourDB_CONNECTION_STRING";
                  SqlConnection conn = new SqlConnection(connectionUrl);
                 conn.Open();
                 string getLastRowId = "SELECT TOP 1 empId FROM emp ORDER BY empId DESC";

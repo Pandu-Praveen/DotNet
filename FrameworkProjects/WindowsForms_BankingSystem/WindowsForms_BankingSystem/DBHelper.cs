@@ -11,7 +11,7 @@ namespace WindowsForms_BankingSystem
     {
         private static string _customerName;
         private static readonly string _connectionString =
-            "server=ENCOPDBANLT1776\\MSSQLSERVER1;database=myencora;Integrated Security=True";
+            "yourDB_CONNECTION_STRING";
 
         public static string ConnectionString
         {
