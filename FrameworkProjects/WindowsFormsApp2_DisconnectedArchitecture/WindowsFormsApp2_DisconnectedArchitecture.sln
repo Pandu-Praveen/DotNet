@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2_DisconnectedArchitecture", "WindowsFormsApp2_DisconnectedArchitecture\WindowsFormsApp2_DisconnectedArchitecture.csproj", "{A32B65FA-3D7B-4399-B7AF-870F7B4692C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A32B65FA-3D7B-4399-B7AF-870F7B4692C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32B65FA-3D7B-4399-B7AF-870F7B4692C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32B65FA-3D7B-4399-B7AF-870F7B4692C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32B65FA-3D7B-4399-B7AF-870F7B4692C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51E0AC3D-0808-4D2F-8129-20D63481DED9}
+	EndGlobalSection
+EndGlobal

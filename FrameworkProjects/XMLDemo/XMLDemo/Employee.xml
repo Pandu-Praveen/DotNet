@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EmployeeData>
+  <Employee>
+    <Id>
+		  1001
+	  </Id>
+    <Name>
+		  Ram
+	  </Name>
+    <Salary>
+		  20,0000
+	  </Salary>
+  </Employee>
+  <Employee>
+    <Id>
+			1002
+		</Id>
+    <Name>
+			Kishore
+		</Name>
+    <Salary>
+			12030
+		</Salary>
+  </Employee>
+  <Employee>
+    <Id>
+			1003
+		</Id>
+    <Name>
+			Bala
+		</Name>
+    <Salary>
+			40,0000
+		</Salary>
+  </Employee>
+</EmployeeData>
