@@ -37,11 +37,11 @@ namespace ImageShowing
               
                 if (showFirstImage)
                 {
-                    pictureBox1.Image = Image.FromFile(@"C:\Users\Praveen.S3\Downloads\dotnet1.jpg");
+                    pictureBox1.Image = Image.FromFile(@"your_path_dotnet1.jpg");
                 }
                 else
                 {
-                    pictureBox1.Image = Image.FromFile(@"C:\Users\Praveen.S3\Downloads\dotnet2.jpg");
+                    pictureBox1.Image = Image.FromFile(@"your_path_dotnet2.jpg");
                 }
             }
             catch (Exception ex)

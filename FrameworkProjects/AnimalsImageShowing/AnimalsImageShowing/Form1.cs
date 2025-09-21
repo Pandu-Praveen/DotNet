@@ -25,7 +25,7 @@ namespace AnimalsImageShowing
             listBox1.Items.Add("Lion");
             listBox1.Items.Add("Rabbit");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Praveen.S3\source\repos\AnimalsImageShowing\AnimalImages\dog.jpg");
+            pictureBox1.Image = Image.FromFile(@"your_path_dog.jpg");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace AnimalsImageShowing
             string currAnimal = listBox1.SelectedItem as string;
             try
             {
-                pictureBox1.Image = Image.FromFile($"C:\\Users\\Praveen.S3\\source\\repos\\AnimalsImageShowing\\AnimalImages\\{currAnimal}.jpg");
+                pictureBox1.Image = Image.FromFile($"your_path_{currAnimal}.jpg");
             }
             catch (Exception ex)
             {
