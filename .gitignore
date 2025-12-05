@@ -10,9 +10,6 @@ out/
 *.userosscache
 *.userprefs
 
-# Logs
-*.log
-
 # VS Code
 .vscode/
 
@@ -24,6 +21,8 @@ project.fragment.lock.json
 artifacts/
 **/packages/
 
+# Logs
+*.log
 
 # Rider
 .idea/
