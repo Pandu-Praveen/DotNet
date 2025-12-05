@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Attendance>
+
+<h2>All Attendances</h2>
+<a class="btn btn-primary" asp-action="Mark">Mark Attendance</a>
+<a class="btn btn-info" asp-action="Report">View Report</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var att in Model)
+        {
+            <tr>
+                <td>@att.Employee.Name</td>
+                <td>@att.Date.ToShortDateString()</td>
+
+                <td>@(att.CheckInTime == null ? "-" : att.CheckInTime)</td>
+                <td>@(att.CheckOutTime == null ? "-" : att.CheckOutTime)</td> 
+                <td>@att.Status</td>
+                <td>@(att.Remarks==null ? "No Remarks": att.Remarks)</td>
+                <td>
+                    <a class="btn btn-sm btn-success" asp-action="Edit" asp-route-id="@att.AttendanceId">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@att.AttendanceId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

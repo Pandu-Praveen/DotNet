@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Attendance>
+@{
+    var summary = ViewBag.Summary;
+}
+
+<h2>Attendance Report</h2>
+
+<form method="get" class="row g-3 mb-3">
+    <div class="col-md-3">
+        <label>Start Date</label>
+        <input type="date" name="startDate" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label>End Date</label>
+        <input type="date" name="endDate" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label>Employee</label>
+        <select name="employeeId" class="form-control">
+            <option value="">All</option>
+            @foreach (var emp in ViewBag.Employees)
+            {
+                <option value="@emp.EmployeeId">@emp.Name</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label>Status</label>
+        <select name="status" class="form-control">
+            <option value="">All</option>
+            <option>Present</option>
+            <option>Absent</option>
+            <option>On Leave</option>
+        </select>
+    </div>
+    <div class="col-12 mt-2">
+        <button class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+<h4>Summary</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Present Days</th>
+            <th>Absent Days</th>
+            <th>Leaves</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in summary)
+        {
+            <tr>
+                <td>@item.Employee.Name</td>
+                <td>@item.PresentDays</td>
+                <td>@item.AbsentDays</td>
+                <td>@item.LeaveDays</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Details</h4>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var att in Model)
+        {
+            <tr>
+                <td>@att.Employee.Name</td>
+                <td>@att.Date.ToShortDateString()</td>
+                <td>@att.CheckInTime</td>
+                <td>@att.CheckOutTime</td>
+                <td>@att.Status</td>
+                <td>@att.Remarks</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@model MVC_Core_Assignment_1.Models.Product
+
+@{
+    ViewData["Title"] = "Search Product By Id";
+}
+
+<h2>Search Product by Id</h2>
+
+<form asp-action="DisplayProductById" method="post">
+    <div>
+        <label>Enter Product Id:</label>
+        <input type="number" name="id" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<hr />
+
+@if (Model != null)
+{
+    <h3>Product Details</h3>
+    <p><strong>Id:</strong> @Model.Id</p>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+}
+else if (ViewBag.Message != null)
+{
+    <p style="color:red;">@ViewBag.Message</p>
+}
+
+<a href="/Product/Index">Back to Menu</a>

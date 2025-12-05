@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MVC_AtmApp.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h2>All Customers</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Customer</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table">
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Account Number</th>
+            <th>Balance</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.FullName</td>
+                <td>@c.AccountNumber</td>
+                <td>@c.Balance.ToString("C")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@c.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@c.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

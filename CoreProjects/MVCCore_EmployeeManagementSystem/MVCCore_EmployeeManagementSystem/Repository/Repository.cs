@@ -1,0 +1,62 @@
+﻿using System;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
+using MVCCore_EmployeeManagementSystem.Data;
+using MVCCore_EmployeeManagementSystem.Repository;
+
+namespace MVCCore_EmployeeManagementSystem.Repository
+{
+    public class Repository<T> : IRepository<T>
+        where T : class
+    {
+        // Dependency Injection of DbContext
+        private readonly ApplicationDbContext _context;
+        // The DbSet corresponding to the entity
+        protected readonly DbSet<T> _dbSet;
+        public DbSet<T> Table => _dbSet;
+
+        public Repository(ApplicationDbContext context)
+        {
+            _context = context;
+            _dbSet = _context.Set<T>();
+        }
+
+        // Getting all entities here
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await _dbSet.ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _dbSet.FindAsync(id);
+        }
+
+        public async Task AddAsync(T entity)
+        {
+            await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            _dbSet.Update(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                _dbSet.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
+        }
+    }
+}

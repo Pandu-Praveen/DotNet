@@ -1,0 +1,41 @@
+﻿@model Attendance
+
+<h2>Mark Attendance</h2>
+
+<form asp-action="Mark" method="post" class="col-md-3">
+    <div class="mb-3">
+        <label>Employee</label>
+        <select asp-for="EmployeeId" class="form-control" asp-items="@(new SelectList(ViewBag.Employees, "EmployeeId", "Name"))"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Date</label>
+        <input asp-for="Date" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Check In</label>
+        <input asp-for="CheckInTime" type="time" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Check Out</label>
+        <input asp-for="CheckOutTime" type="time" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+        <select asp-for="Status" class="form-control">
+            <option>Present</option>
+            <option>Absent</option>
+            <option>On Leave</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Remarks</label>
+        <input asp-for="Remarks" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

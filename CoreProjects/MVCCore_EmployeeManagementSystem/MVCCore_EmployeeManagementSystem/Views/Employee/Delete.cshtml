@@ -1,0 +1,22 @@
+﻿@model Employee
+
+<h2>Delete Employee</h2>
+
+<div class="alert alert-warning">
+    Are you sure you want to delete this employee?
+</div>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p>Email: @Model.Email</p>
+    <p>Designation: @Model.Designation</p>
+    <p>Department: @Model.Department</p>
+    <p>Date of Joining: @Model.DateOfJoining.ToShortDateString()</p>
+    <p>Active: @(Model.IsActive ? "Yes" : "No")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="EmployeeId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

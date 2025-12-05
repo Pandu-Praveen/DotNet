@@ -1,0 +1,21 @@
+﻿@model MVC_Core_Assignment_1.Models.Product
+
+<h2>Update Product Price</h2>
+
+<form asp-action="UpdateProductPrice" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <div>
+        <label>Product Name:</label>
+        <input value="@Model.Name" readonly class="form-control" />
+    </div>
+
+    <div>
+        <label>New Price:</label>
+        <input name="price" type="number" class="form-control" value="@Model.Price" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+<a href="/Product/DisplayAllProducts">Back to List</a>

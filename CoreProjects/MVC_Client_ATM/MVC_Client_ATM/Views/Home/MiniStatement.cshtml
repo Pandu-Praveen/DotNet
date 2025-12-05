@@ -1,0 +1,37 @@
+﻿@model List<MVC_Client_ATM.Models.MiniStatementViewModel>
+
+@{
+    ViewData["Title"] = "Mini Statement";
+}
+
+<h2>Mini Statement</h2>
+
+<form asp-action="MiniStatement" method="post">
+    <label>Account Number:</label>
+    <input type="text" name="accountNumber" required />
+    <button type="submit">Get Mini Statement</button>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <h3>Recent Transactions</h3>
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var tx in Model)
+        {
+            <tr>
+                <td>@tx.TransactionId</td>
+                <td>@tx.TransactionType</td>
+                <td>@tx.Amount</td>
+                <td>@tx.TransactionDate</td>
+                <td>@tx.Description</td>
+            </tr>
+        }
+    </table>
+}

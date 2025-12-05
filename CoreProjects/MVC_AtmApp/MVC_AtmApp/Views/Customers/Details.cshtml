@@ -1,0 +1,19 @@
+﻿@model MVC_AtmApp.Models.Customer
+
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<h2>Customer Details</h2>
+
+<div class="card p-3">
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Name:</strong> @Model.FullName</p>
+    <p><strong>Account Number:</strong> @Model.AccountNumber</p>
+    <p><strong>Balance:</strong> @Model.Balance.ToString("C")</p>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</p>

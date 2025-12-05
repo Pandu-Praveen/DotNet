@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM_Transaction_Web_Api", "ATM_Transaction_Web_Api\ATM_Transaction_Web_Api.csproj", "{3A621B7C-C2F5-45C4-B696-3D0CA66E92AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A621B7C-C2F5-45C4-B696-3D0CA66E92AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A621B7C-C2F5-45C4-B696-3D0CA66E92AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A621B7C-C2F5-45C4-B696-3D0CA66E92AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A621B7C-C2F5-45C4-B696-3D0CA66E92AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70DBF665-A66F-4489-AAD2-51B4DF4287E2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿@model MVC_Client_ATM.Models.BalanceViewModel
+
+@{
+    ViewData["Title"] = "Check Balance";
+}
+
+<h2>Check Balance</h2>
+
+<form asp-action="Balance" method="post">
+    <label>Account Number:</label>
+    <input type="text" name="accountNumber" required />
+    <button type="submit">Check</button>
+</form>
+
+@if (Model != null)
+{
+    <h3>Balance Details</h3>
+    <p><strong>Account Number:</strong> @Model.AccountNumber</p>
+    <p style="color:green;"><strong>Current Balance:</strong> @Model.Amount</p>
+}

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVC_AtmApp.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Mini Statement";
+}
+
+<h2>Mini Statement (Last 10 Transactions)</h2>
+
+<form asp-action="MiniStatement" method="get" class="mb-3">
+    <div class="form-group mb-3">
+        <label>Account Number</label>
+        <input name="accountNumber" class="form-control" required />
+    </div>
+    <button class="btn btn-info" type="submit">Get Statement</button>
+    <a asp-action="Index" class="btn btn-primary">Back</a>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Balance After</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in Model)
+            {
+                <tr>
+                    <td>@t.Date</td>
+                    <td>@t.Type</td>
+                    <td>@t.Amount.ToString("C")</td>
+                    <td>@t.BalanceAfter</td>
+                    <td>@t.Notes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model != null)
+{
+    <p>No transactions found.</p>
+}

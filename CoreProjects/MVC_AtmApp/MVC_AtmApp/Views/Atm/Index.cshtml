@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "ATM Dashboard";
+}
+
+<h2>ATM Dashboard</h2>
+<p class="text-muted">Select an operation below:</p>
+
+<div class="row mt-4">
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Deposit</h5>
+                <p class="card-text">Add money to a customer's account</p>
+                <a asp-action="Deposit" class="btn btn-success">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Withdraw</h5>
+                <p class="card-text">Withdraw money from a customer's account</p>
+                <a asp-action="Withdraw" class="btn btn-warning">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Check Balance</h5>
+                <p class="card-text">View current balance of a customer</p>
+                <a asp-action="Balance" class="btn btn-info">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Mini Statement</h5>
+                <p class="card-text">Hey!! You can view last 10 transactions</p>
+                <a asp-action="MiniStatement" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+</div>

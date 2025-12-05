@@ -1,0 +1,26 @@
+﻿@model WithdrawViewModel
+@{
+    ViewData["Title"] = "Withdraw Money";
+}
+
+
+<h2>Withdraw Money</h2>
+
+
+<form asp-action="Withdraw" method="post">
+    <div>
+        <label>Account Number:</label>
+        <input asp-for="AccountNumber" />
+        <span asp-validation-for="AccountNumber" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Amount:</label>
+        <input asp-for="Amount" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Description (optional):</label>
+        <input asp-for="Description" />
+    </div>
+    <button type="submit">Withdraw</button>
+</form>
